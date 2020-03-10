@@ -38,7 +38,7 @@ def contact():
         'contact.html',
         title='Contact',
         year=datetime.now().year,
-        message='Your contact page.'
+        message='Frc Scouting Analyzer contact info (built by Asaf Soreq).'
     )
 
 @app.route('/photoalbum')
