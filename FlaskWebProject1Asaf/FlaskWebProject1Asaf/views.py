@@ -12,6 +12,8 @@ from FlaskWebProject1Asaf.Models.LocalDatabaseRoutines import create_LocalDataba
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
 from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
 from wtforms import ValidationError
+import pandas as pd
+from datetime import datetime
 import os
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -96,3 +98,47 @@ def Login():
         year=datetime.now().year,
         repository_name='Pandas',
         )
+
+@app.route('/Query', methods=['GET', 'POST'])
+def Query():
+
+    Name = None
+    Country = ''
+    capital = ''
+    df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'static\\Data\\capitals.csv'))
+    df = df.set_index('Country')
+
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+    form = QueryFormStructure(request.form)
+     
+    if (request.method == 'POST' ):
+        name = form.name.data
+        Country = name
+        if (name in df.index):
+            capital = df.loc[name,'Capital']
+            raw_data_table = ""
+        else:
+            capital = name + ', no such country'
+        form.name.data = ''
+
+
+
+    return render_template('Query.html', 
+            form = form, 
+            name = capital, 
+            Country = Country,
+            raw_data_table = raw_data_table,
+            title='Query by the user',
+            year=datetime.now().year,
+            message='This page will use the web forms to get user input'
+        )
+@app.route('/datamodel', methods=['GET', 'POST'])
+def datamodel():
+    """Renders the contact page."""
+    return render_template(
+        'datamodel.html',
+        title='This is my Data Model page abou UFO',
+        year=datetime.now().year,
+        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+    )
