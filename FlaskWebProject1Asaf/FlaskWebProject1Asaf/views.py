@@ -58,7 +58,7 @@ def about():
         'about.html',
         title='About',
         year=datetime.now().year,
-        message='Your application description page.'
+        message='About the frc scouting data analyzer.'
     )
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
