@@ -26,6 +26,6 @@ class LocalDatabaseServiceRoutines(object):
         spreadsheet = client.open_by_key(DocId)
         with open(self.ScoutingDataFile, 'w', newline="") as f:
             writer = csv.writer(f)
-            writer.writerows(spreadsheet.worksheets()[0].get_all_values())
+            writer.writerows(spreadsheet.worksheets()[num].get_all_values())
         df = pd.read_csv(self.ScoutingDataFile)
         return df
