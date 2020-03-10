@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "scoutingsheets-268814",
+  "private_key_id": "26204c8c5db22ded518f2152df83209ae7ccde6c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDHcV5IlQ/R79DT\nyWU91GDFdUAYmpf4yuxa+iULlKRdEMpA2MgK7RDEir8x7EIrMVpYl5NAQzhDybs2\nyXQcd4KHXNWH3AqSA5pTIwYwfa/YD2Hf8xmRShdhU8CzEY2JgO+tkUllylKa9ijh\nGIt/ORS9Aj+GIYMF73Bl8N7o+yWB/mq+POe/ejqKpElsg8FpC6VBaSoP2pqTeU/l\nwKzCfjZa7kc5g8taUymMkiuc13gfOepucFekmUsRi7upOZ5nxv5G8edPcIqZruTg\nd4hH6oWzOKbuVNZUievVkrr2Z9PeKQ1S6VAoBXY7YVvXhxKd2GbjV3TuGPnS6lVa\n2HcAs3KRAgMBAAECggEABTqwDyp2tLlwpJeWOPh1j8J9lhI6Q9gGOchvP44mf8OD\nRLn/shGkgT1mD/Ky4Bu2KQvTB49Q+ANfuOsFSVh01VnAxi7QdCL2C+dSL+P2aq1/\nPSD28vvvVapIK38dUpVNM3l+DtYu3kiaqnQ7TBr8s+FNixXGhVmm0nVt/XaASu01\n7j7EOhvqRwr3GAOGgvfjxGZepEYAlt7bzxb8FbPblETv/+Nmu9oyuM5bpR1lbNww\nAiuAq4PjkxQyttgzOXzwK5WJcPuEgEiODZx/Kaj/mI31KfZ9Jxh/w21NIvPgQMWX\nGPwIbGxNf1yjSp0brQUUokQiSJRCYJpInN0sdZihNQKBgQDlQDbURXX1mrSCi6oi\n8UGol+zW17CEdxtQbIQU5zbeb0MmSRPF2rPixS1tpy8NlbOFlnul/twA0vmA3vc6\nC/9u1R7gwK9kElN9rDK1gaWnOZFltIRexeGEq0TBKZ7V9U/rGBI+ZALdrG8K/DCo\niJiD5UEwrAvOW29L2nEk/wlVAwKBgQDetsf60FrrQbD8UPDhlcYaakwMgZ2eAD4D\nwIfA0suY240X+gMSq6GsiFzHX9Nw570wZgITk0ggojlePchQ8CQUQiTpen/GXa77\nN6nEZjOZQ+//7yCAqEjtQnrI8iDC0PwdOlL2FiPH71FEzSyoCk+U0ypMGPNzvkwg\nH/Hsok2T2wKBgAedf3TDrexvrCld/FPW0ciI62wjlBCCaFzejfCn0ZHH/mIKMWb0\nId+Zjy3CTPTVkTYRzp+v/JzmZTVbsrix51VGLRVoMStQ1IcrLjALU3Zfmi3XtkHz\nrs8aZVlJSaZv1KzJiumZpuK4NKQXxoICr5ZKCkVUobvEG8lYQ0PoWOYDAoGBANWs\nrc8Aacp+WyypB4KXLNqZE1+IV82IU/dLl7MzSuzb79GKJ7qY+mNK7SDH2lffrk6p\n/+ICE1hj7ABz7CVjUGozT7DFu6N4rHIP5IwuteCdIrz9EsT9MAKaHq1+SFpBITF1\njLTXZvriq6kD5I1QXyvdMR6TbbelYuoLXBN5YE6zAoGBAOIf7SRPx6B5DioFTcuu\nIiEfkvBWsNYmAn3UgwF9CFd+0qaYRoE+89f0M4t4Xk5tKVm3IDB68ehgqvmIVNQS\nZXElbuhtb5WQttPV3KOvOGoWUmGICj8lW2jOHpMXGTzP6jMv+fMkdK1vs7P+z7HD\njwCAamXfGEYyqm4VNLfnbrTu\n-----END PRIVATE KEY-----\n",
+  "client_email": "scoutingsheets@scoutingsheets-268814.iam.gserviceaccount.com",
+  "client_id": "116405336858041889576",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/scoutingsheets%40scoutingsheets-268814.iam.gserviceaccount.com"
+}
