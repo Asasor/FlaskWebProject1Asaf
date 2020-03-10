@@ -1,0 +1,371 @@
+"Biome/Ecoregion
+(roll 1 d60)
+","Number of
+ Environemental
+ conditions
+(roll 1d12)","Environemental 
+Conditions 
+(Roll d44)
+
+","Water Source 
+(Roll 1d48)
+Roll again if
+incompatible biome
+","Number of staple crops/
+Significant Animals
+ (roll once for each)
+(roll d10)","Staple crops
+(roll d47)
+Adapt or assume trade
+If incompatible biome","Significant Animals 
+(roll d36)
+Adapt if incompatible 
+biome
+"
+"Mediterranean forest
+(1)
+","0
+(1-2)","Frequent Storms
+(1)","River
+(1-12)","1
+(1-5)","Rice
+(1)","Equids
+(Horses, Donkeys, Zebras...) 
+(1)"
+"Temperate
+ Grasslands
+(2)","1
+(3-5)","Tornadoes
+(2)","Stream/Creek
+(13-15)","2
+(6-8)","Potatoes
+(2)","Shellfish
+(Crabs, Oysters, Clams...)
+(2)"
+"Steppes
+(3)","2
+(6-7)","Volcanic Land 
+(3)
+","Pond/Oasis
+(16-18)","3
+(9)","Wheat
+(3)","Fish
+(Sharks, Tuna,Salmons...)
+(3)"
+"Freshwater 
+Swamp Forest
+(4)","3
+(8-9)","Frequent Disease
+(population/animals/crops)
+(4)
+","Rainfall
+(19)","4
+(10)","Tomatoes
+(4)","Cervids and Antellopes
+(Deer, Impalas, Moose...)
+(4)"
+"Savanna
+(5)","4
+(10-11)","Frequent Wildfires/Floods/
+Droughts 
+(5)","Lake
+(20-32)",,"Yams
+(5)","Canines
+(Dogs, Wolves, Foxes...)
+(5)"
+"Montane Grasslands
+(6)","5
+(12)","Vicious Carnivores
+(6)","Groundwater
+(33-34)
+",,"Lichen
+(6)","Reptiles
+(Snakes, Turtles, Crocodiles...)
+ (6)"
+"Temperate hilly
+Grasslands
+(7)",,"Violent Hervibores
+(7)","Water retaining plants
+(35)
+",,"Squash
+(7)","Arthropods
+(Spiders, Insects,Millipedes...)
+(7)"
+"Montane
+ Forest
+(8)",,"Avalanches/Landslides/
+Sinkholes
+(8)","Melting ice
+(36)",,"Mushrooms
+(8)","Mollusks 
+(Squid, Snails,Chitons..)
+(8)"
+"Arctic/Antartic 
+Tundra
+(9)",,"Limnic Eruptions/Methane 
+Emissions/Toxic Emissions
+(9)","Irrigated from elsewhere
+(37-40)
+",,"Soybeans
+(9)","Caprines
+(Sheep, Goat, Musk Ox...)
+(9)
+"
+"Taiga/Boreal
+ Forest
+(10)",,"Meteorite Crater/
+Weird Formation 
+(10)","Natural spring
+(41-43)",,"Quinoa
+(10)","Bovines
+(Cattle, Yak, Buffalo...)
+(10)"
+"Hot Desert
+(11)",,"Heatwaves/Coldwaves
+(11)
+
+","Multiple sources
+ (44-48)",,"Fruits
+(11)
+","Camelids 
+(Camels, Llamas,Alpacas...)
+(11)"
+"Between 2 biomes 
+(roll 1, chose the other)
+(12)
+",,"Flash Freezes/
+Flash Heat
+(12)",,,"Nuts
+(12)","Rodents 
+(Mice, Beavers, Capybara...)
+(12)"
+"Shrubland
+(Chaparral/Matorral)
+(13)
+",,"Parasites
+(13)",,,"Berries
+(13)","Chiropters and Dermopters
+(Bats, Flying Lemurs)
+(13)"
+"Badlands
+(14)",,"Recurring Famines
+(14)
+",,,"Legumes
+(14)","Cetacea and Sirenians
+(Dolphins,Dugongs,Narwhals...)
+(14) "
+"Mesa/Tableland
+(15)",,"Health-Hazardeous/
+Radioactive 
+Mineral
+(15)
+",,,"Misc. plant roots
+(15)","Pachyderms
+(Rhinoceros, Elephants, Hippos...)
+(15)
+"
+"Bog
+(16)",,"Frequent raids
+(16)
+",,,"Treesap
+(16)","Swine and Tapir
+(Boars, Peccaries, Tapir)
+(16) 
+"
+"Mangrove Swamp
+(17)",,"Recent Migration
+(17)
+
+",,,"Nectar
+(17)","Felids
+(Cats, Panthers, Cheetahs)
+(17) "
+"Archipelago 
+(Roll 1 biome)
+(18)
+",,"Geographically Isolating 
+Terrain (mountains, seas...)
+(18)",,,"Cacti
+(18)
+","Ursids
+(Pandas, Grizzlies, Polar Bears)
+(18)"
+"Marsh
+(19)",,"High altitude/Near Seafloor
+(19)
+",,,"Canes
+(19)","Small Carnivores and omnivores
+(Raccoons, Badgers, Skunks...)
+(19)"
+"Seasonal Tropical Forest
+(20)",,"Earthquakes
+(20)
+",,,"Reeds
+(20)","Mustelids
+(Weasels, Otters, ferrets...)
+(20)"
+"Xeric Shrubland
+(21)",,"Unstable Land
+(21)",,,"Bamboo shoots
+(21)","Primates
+(Monkeys, Apes, Lemurs...)
+(21)"
+"Cloud Forest
+(22)",,"Common Poisonous/venomous 
+Fauna/Flora
+(22)
+",,,"Kelp
+(22)","Lagomorphs
+(Hares, Rabbits, Pika)
+(22)"
+"Tropical Rainforest
+(Equitorial)
+(23)",,"Poor Soil Quality 
+(23)
+",,,"Moss
+(23)","Small Insectivore Mammals
+(Moles, Hedgehogs,Shrews)
+(23)"
+"Alpine-Steppe
+(24)",,"Excellent Land 
+(Strategic position)
+(24)
+",,,"Millet
+(24)","Marsupials
+(Kangaroos, Koalas, Possums...)
+(24)"
+"Temperate Decidous Forest
+(25)",,"Excellent Land 
+(Rare ressource/Good soil)
+(25)
+",,,"Buckwheat
+(25)","Pilosa
+(Anteaters, sloths)
+(25)
+"
+"Flooded Grasslands
+(26)",,"Crossroad of Cultures
+(Lots of trade/War/Civilizations)
+(26)",,,"Sweet potatoes
+(26)","Amphibians
+(Frogs, Newts, Amphibians...)
+(26)
+"
+"Woodlands
+(27)",,"Geographically Isolated Land
+(Like the Americas/ Australia)
+(27)",,,"Cassava
+(27)
+","Cingulata
+(Armadillos)
+(27)"
+"Calanques/Beach/Sea
+(28)",,"unsafe drinking water
+(28)",,,"Sorghum
+(28)
+","Flightless Birds
+(Penguins, Ostrichs, Cassowaries)
+(28)
+"
+"Alpine Tundra
+(29)",,"Excellent land
+(ore rich)
+(29)
+",,,"Barley
+(29)","Raptors
+(Eagles,Owls,Vultures...)
+(29)"
+"Cold Desert
+(30)",,"Abundance of animals
+(30)
+",,,"Oats
+(30)
+","Fowl
+(Waterfowl,Chicken,Duck...)
+(30)
+"
+"Peat Swamp Forest
+(31)",,"Docile Animals
+(31)
+",,,"Rye
+(31)","Corvids and psittacines 
+(Smart Birds)
+(Ravens, Parrots, crows...)
+(31)"
+"Coniferous Swamp
+(32)",,"Natural Wonder 
+(32)",,,"Taro
+(32)","Waterbirds
+(Flamingos, Albatrosses, Gulls...)
+(32)"
+"Temperate Rainforest
+(33)",,"Easy access to drinking water
+(33)",,,"Cedar
+(33)","Other Birds
+(Hummingbirds, doves, woodpeckers...)
+(33)"
+"Temperate broadleaf 
+and mixed 
+forest
+(34)",,"Useful Plants 
+(34)",,,"Breadfruit
+(34)","Feliforms other than felines
+(Hyenas, Civets, Mangoose...)
+(34)"
+"Tropical Dry
+ Forest
+(35)",,"Waterfalls 
+(35)",,,"Coconuts
+(35)","Pinnipeds
+(Walruses, Seals, Sea lions...)
+(35)
+"
+"Temperate coniferous
+ forest 
+(36)",,"Large hill/ Mountains 
+(36)",,,"Maize
+(36)","No significant Animal
+(36)"
+"Tropical/Subtropical
+Coniferous Forest 
+(37)",,"Very hard terrain for
+ foreigners/Invaders 
+(37)",,,"Palm
+(37)",
+" Mediterranean woodlands
+(38)",,"Unique Ecosystem
+(38)",,,"Teff
+(38)",
+"Multiple Biomes 
+Roll 1, choose 1
+(39-55)",,"Magnificent Caves
+(39)",,,"Flax
+(39)",
+"Multiple Biomes 
+Roll 1, choose 2
+(56-60)",,"Land filled with fossils
+(40)",,,"Plantain
+(40)",
+,,"Ruins of an Old Civilization/
+Cave Paintings
+(41)",,,"Melons
+(41)",
+,,"Breathtaking Landscapes
+(42)",,,"Grapes
+(42)",
+,,"Natural Harbour/ Large open
+Field
+(43)",,,"Olives
+(43)",
+,,"Recurring Memorable Event
+(Turtles hatching/ Flowers 
+blooming/ Birds Travelling, etc.)
+(44)
+",,,"Edible flowers
+(44)",
+,,,,,"Hemp
+(45)",
+,,,,,"Milkweed
+(46)",
+,,,,,"Peppers
+(47)",

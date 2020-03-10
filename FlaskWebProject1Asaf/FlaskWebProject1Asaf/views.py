@@ -7,7 +7,8 @@ from flask   import Flask, render_template, flash, request
 from FlaskWebProject1Asaf import app
 from FlaskWebProject1Asaf.Models.QueryFormStructure import QueryFormStructure 
 from FlaskWebProject1Asaf.Models.QueryFormStructure import LoginFormStructure 
-from FlaskWebProject1Asaf.Models.QueryFormStructure import UserRegistrationFormStructure 
+from FlaskWebProject1Asaf.Models.QueryFormStructure import UserRegistrationFormStructure
+from FlaskWebProject1Asaf.Models.ScoutingDataStructure import create_DataSheetsServiceRoutines
 from FlaskWebProject1Asaf.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
 from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
@@ -20,6 +21,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 
 db_Functions = create_LocalDatabaseServiceRoutines() 
+sd_Functions = create_DataSheetsServiceRoutines()
 
 @app.route('/')
 @app.route('/home')
@@ -145,17 +147,17 @@ def datamodel():
 @app.route('/dataset1')
 def DataSet1():
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
+    df = sd_Functions.ReadCSVSheetsDB('1IzHO6j0Z276oWAjUTrieK7qfsRmf5OwGajl8IyOZF78', 0)
     raw_data_table = df.to_html(classes = 'table table-hover')
 
 
     """Renders the contact page."""
     return render_template(
         'dataset1.html',
-        title='This is Data Set 1 page',
+        title='This is the sheets data page',
         raw_data_table = raw_data_table,
         year=datetime.now().year,
-        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+        message='In this page we will display the google sheets scouting data by the given link'
     )
 @app.route('/dataset2')
 def DataSet2():
