@@ -3,30 +3,30 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <h1>FRC Scouting Analyzer</h1>
+    <p class="lead">The FRC Scouting Analyzer is a free validity checker for any and all frc teams <br> which are interested in checking the validity of their data against blue alliance.</p>
+    <p><a href="https://www.thebluealliance.com/" class="btn btn-primary btn-large">Blue Alliance - Data Baseline &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            This website allows you to check the validity of the information which your scouting
+            team has obtained during the various competitions. Go to the data tab in order to 
+            begin the validation process. 
         </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="{{ url_for('datamodel') }}">Start Analyzing &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+        <h2>The blue alliance blog</h2>
+        <p>The blue alliance blog proved bery helpfull in making this website and is very insightfull</p>
+        <p><a class="btn btn-default" href="https://blog.thebluealliance.com/">The blue alliance blog &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+        <h2>notable libraries</h2>
+        <p>This website uses team 1418's tbapy, a library which allows you to use the blue alliance api in python</p>
+        <p><a class="btn btn-default" href="https://github.com/frc1418/tbapy">github &raquo;</a></p>
     </div>
 </div>
 
