@@ -105,10 +105,12 @@ def Login():
 def Query():
 
     Name = None
-    Country = ''
-    capital = ''
-    df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'static\\Data\\capitals.csv'))
-    df = df.set_index('Country')
+    Ranking = ''
+    Team_Number = ''
+    df = sd_Functions.ReadCSVSheetsDB('1E9-iezDKAkKzp7WB_2_je4W7uCPko-7V4GpmpaAV4f4', 0)
+    df = df.set_index('Team Number')
+    avgRanking = sum(df['Ranking Score'].tolist()) / len(df['Ranking Score'].tolist())
+    subtitle = 'table is'
 
     raw_data_table = df.to_html(classes = 'table table-hover')
 
@@ -116,24 +118,26 @@ def Query():
      
     if (request.method == 'POST' ):
         name = form.name.data
-        Country = name
-        if (name in df.index):
-            capital = df.loc[name,'Capital']
+        Ranking = name
+        if (int(name) in df.index):
+            Team_Number = df.loc[int(name),'Ranking Score']
             raw_data_table = ""
+            subtitle = 'For comparison, The average ranking is -', str(avgRanking)
         else:
-            capital = name + ', no such country'
+            Team_Number = name + ', no such team'
         form.name.data = ''
 
 
 
     return render_template('Query.html', 
             form = form, 
-            name = capital, 
-            Country = Country,
+            name = Team_Number, 
+            Ranking = Ranking,
             raw_data_table = raw_data_table,
             title='Query by the user',
             year=datetime.now().year,
-            message='This page will use the web forms to get user input'
+            message='This page will use the web forms to get user input',
+            lower_heading=subtitle
         )
 @app.route('/datamodel', methods=['GET', 'POST'])
 def datamodel():
@@ -142,7 +146,7 @@ def datamodel():
         'datamodel.html',
         title='This is my Data Model page abou FRC scouting',
         year=datetime.now().year,
-        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+        message='In this page some datasets that present data on the distribution of points in FIRST competitions are presented'
     )
 @app.route('/dataset1')
 def DataSet1():

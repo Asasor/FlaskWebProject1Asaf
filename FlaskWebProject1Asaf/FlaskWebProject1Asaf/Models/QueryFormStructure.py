@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 
 class QueryFormStructure(FlaskForm):
     """This class contains the names of all the fields in the form"""
-    name = StringField('Country Name?)' , validators = [DataRequired()])
+    name = StringField('Team Number?)' , validators = [DataRequired()])
     submit = SubmitField('Submit')
 
 class UserRegistrationFormStructure(FlaskForm):
