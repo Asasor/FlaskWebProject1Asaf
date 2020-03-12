@@ -140,7 +140,7 @@ def datamodel():
     """Renders the contact page."""
     return render_template(
         'datamodel.html',
-        title='This is my Data Model page abou UFO',
+        title='This is my Data Model page abou FRC scouting',
         year=datetime.now().year,
         message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
     )
