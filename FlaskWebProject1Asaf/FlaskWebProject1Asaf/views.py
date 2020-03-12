@@ -157,12 +157,12 @@ def DataSet1():
         title='This is the sheets data page',
         raw_data_table = raw_data_table,
         year=datetime.now().year,
-        message='In this page we will display the google sheets scouting data by the given link'
+        message='In this page we will display the google sheets scouting points data by the given link'
     )
 @app.route('/dataset2')
 def DataSet2():
 
-    df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'static\\Data\\capitals.csv'))
+    df = sd_Functions.ReadCSVSheetsDB('1E9-iezDKAkKzp7WB_2_je4W7uCPko-7V4GpmpaAV4f4', 0)
     raw_data_table = df.to_html(classes = 'table table-hover')
 
 
@@ -172,5 +172,5 @@ def DataSet2():
         title='This is Data Set 2 page',
         raw_data_table = raw_data_table,
         year=datetime.now().year,
-        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+        message='In this page we will display the team overview sheet'
     )
