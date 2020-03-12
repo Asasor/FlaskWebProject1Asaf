@@ -50,7 +50,7 @@ def photoalbum():
         'photoalbum.html',
         title='Photo Album',
         year=datetime.now().year,
-        message='Photos of ducks of all shapes and sizes'
+        message='Photos of various things in the FIRST FRC program'
     )
 
 @app.route('/about')
