@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\FlaskWebProject1Asaf",
     "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf",
     "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\Models",
-    "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\static",
-    "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\static\\Data",
+    "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\required",
+    "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\required\\flask_wtf",
     "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\templates"
   ],
-  "SelectedNode": "\\FlaskWebProject1Asaf.sln",
+  "SelectedNode": "\\FlaskWebProject1Asaf\\FlaskWebProject1Asaf\\Models\\ScoutingDataStructure.py",
   "PreviewInSolutionExplorer": false
 }

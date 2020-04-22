@@ -3,6 +3,7 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
+import numpy as np
 from flask   import Flask, render_template, flash, request
 from FlaskWebProject1Asaf import app
 from FlaskWebProject1Asaf.Models.QueryFormStructure import QueryFormStructure 
@@ -10,11 +11,16 @@ from FlaskWebProject1Asaf.Models.QueryFormStructure import LoginFormStructure
 from FlaskWebProject1Asaf.Models.QueryFormStructure import UserRegistrationFormStructure
 from FlaskWebProject1Asaf.Models.ScoutingDataStructure import create_DataSheetsServiceRoutines
 from FlaskWebProject1Asaf.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
 from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
+import matplotlib.pyplot as plt
 from wtforms import ValidationError
 import pandas as pd
 from datetime import datetime
+import base64
+import io
+from os import path
 import os
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -22,6 +28,13 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 db_Functions = create_LocalDatabaseServiceRoutines() 
 sd_Functions = create_DataSheetsServiceRoutines()
+
+def plot_to_img(fig):
+    pngImage = io.BytesIO()
+    FigureCanvas(fig).print_png(pngImage)
+    pngImageB64String = "data:image/png;base64,"
+    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
+    return pngImageB64String
 
 @app.route('/')
 @app.route('/home')
@@ -111,6 +124,8 @@ def Query():
     df = df.set_index('Team Number')
     avgRanking = sum(df['Ranking Score'].tolist()) / len(df['Ranking Score'].tolist())
     subtitle = 'table is'
+    fig2 = plt.figure(figsize=(100,40))
+    ax2 = fig2.add_subplot(111) 
 
     raw_data_table = df.to_html(classes = 'table table-hover')
 
@@ -119,14 +134,16 @@ def Query():
     if (request.method == 'POST' ):
         name = form.name.data
         Ranking = name
-        if (int(name) in df.index):
+        if (int(name) in df.index): 
             Team_Number = df.loc[int(name),'Ranking Score']
+            
             raw_data_table = ""
             subtitle = 'For comparison, The average ranking is -', str(avgRanking)
+            ax2.bar(x =  list(df.columns)[:-1], height = list(df.loc[int(name)])[:-1])
         else:
             Team_Number = name + ', no such team'
         form.name.data = ''
-
+    chart2 = plot_to_img(fig2)
 
 
     return render_template('Query.html', 
@@ -137,16 +154,20 @@ def Query():
             title='Query by the user',
             year=datetime.now().year,
             message='This page will use the web forms to get user input',
-            lower_heading=subtitle
-        )
+            lower_heading=subtitle,
+            chart2 = chart2,
+            height2 = '1000',
+            width2 = '2500'
+        )   
 @app.route('/datamodel', methods=['GET', 'POST'])
 def datamodel():
-    """Renders the contact page."""
+    """Renders the data model page."""
+ 
     return render_template(
         'datamodel.html',
         title='This is my Data Model page abou FRC scouting',
         year=datetime.now().year,
-        message='In this page some datasets that present data on the distribution of points in FIRST competitions are presented'
+        message='In this page some datasets that present data on the distribution of points in FIRST competitions are presented',
     )
 @app.route('/dataset1')
 def DataSet1():
@@ -173,7 +194,7 @@ def DataSet2():
     """Renders the contact page."""
     return render_template(
         'dataset2.html',
-        title='This is Data Set 2 page',
+        title='This is the blue alliance page',
         raw_data_table = raw_data_table,
         year=datetime.now().year,
         message='In this page we will display the team overview sheet'

@@ -1,0 +1,5 @@
+{
+  "SuppressEnvironmentCreationPrompt": true,
+  "Interpreter": "Global|PythonCore|3.7-32",
+  "SuppressPackageInstallationPrompt": true
+}
