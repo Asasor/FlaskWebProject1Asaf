@@ -82,7 +82,6 @@ def Register():
     if (request.method == 'POST' and form.validate()):
         if (not db_Functions.IsUserExist(form.username.data)):
             db_Functions.AddNewUser(form)
-            db_table = ""
 
             flash('Thanks for registering new user - '+ form.FirstName.data + " " + form.LastName.data )
         else:
@@ -116,17 +115,17 @@ def Login():
 
 @app.route('/Query', methods=['GET', 'POST'])
 def Query():
-
-    Name = None
+    plt.rcParams.update({'font.size': 50})
     Ranking = ''
     Team_Number = ''
     df = sd_Functions.ReadCSVSheetsDB('1E9-iezDKAkKzp7WB_2_je4W7uCPko-7V4GpmpaAV4f4', 0)
     df = df.set_index('Team Number')
     avgRanking = sum(df['Ranking Score'].tolist()) / len(df['Ranking Score'].tolist())
+    highestRanking = max(df['Ranking Score'].tolist())
     subtitle = 'table is'
-    fig2 = plt.figure(figsize=(100,40))
-    ax2 = fig2.add_subplot(111) 
-
+    plt.rcParams.update({'font.size': 75})
+    fig2 = plt.figure(figsize=(100,30))
+    ax1, ax2 = fig2.subplots(1,2)
     raw_data_table = df.to_html(classes = 'table table-hover')
 
     form = QueryFormStructure(request.form)
@@ -134,12 +133,13 @@ def Query():
     if (request.method == 'POST' ):
         name = form.name.data
         Ranking = name
-        if (int(name) in df.index): 
+        if (int(name) in df.index):
             Team_Number = df.loc[int(name),'Ranking Score']
             
             raw_data_table = ""
-            subtitle = 'For comparison, The average ranking is -', str(avgRanking)
-            ax2.bar(x =  list(df.columns)[:-1], height = list(df.loc[int(name)])[:-1])
+            subtitle = 'For comparison, The average ranking is - ' + str(avgRanking) + ' and the highest ranking score is - ' + str(highestRanking) + '.'
+            ax1.pie([df.loc[int(name),'Ranking Score'],highestRanking - df.loc[int(name),'Ranking Score']], labels = ["team ranking score \n blue", "the difference between \n the largest ranking \n score and the \n team's ranking score \n orange"])
+            ax2.bar(x =  list(df.columns)[1:-1], height = list(df.loc[int(name)])[1:-1])
         else:
             Team_Number = name + ', no such team'
         form.name.data = ''
@@ -156,8 +156,8 @@ def Query():
             message='This page will use the web forms to get user input',
             lower_heading=subtitle,
             chart2 = chart2,
-            height2 = '1000',
-            width2 = '2500'
+            height2 = '500',
+            width2 = '1000'
         )   
 @app.route('/datamodel', methods=['GET', 'POST'])
 def datamodel():
