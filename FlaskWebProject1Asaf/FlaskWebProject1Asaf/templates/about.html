@@ -2,15 +2,62 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<head>
+    <style>
+        p {
+            margin: 0px 0px 30px; /* space out paragraphs in order to seperate them more clearly */
+        }
+    </style>
+</head>
 
-<p>
-    I am Asaf Soreq from Tichonet High School in Tel Aviv.<br>
-    for my CS project I needed to build a website so I decided to build an frc scouting data analyzer.<br>
-    I hope to interest more people in the FRC world in scouting because I believe that it is a crucial part of a teams' success in every competition.<br>
-    I also hope that my website will be successful and that many teams will use it becuase it will help me with my future career.<br>
-    Enjoy the website :)
-</p>
+<body>
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
 
-{% endblock %}
+    <p>
+        I am Asaf Soreq from Tichonet High School in Tel Aviv.<br>
+        for my CS project I needed to build a website so I decided to build an frc scouting data analyzer.<br>
+        I hope to interest more people in the FRC world in scouting because I believe that it is a crucial part of a teams' success in every competition.<br>
+        I also hope that my website will be successful and that many teams will use it becuase it will help me with my future career.<br>
+        Below is an explanation of how the data is organized in the datasets which are used in the project. <br>
+        Enjoy the website :)
+    </p>
+
+    <p>
+        <b>The Google Sheets DataSet:</b> <br>
+        My FRC team: MA5951, recorded the results of all of the matches in our competition and put them <br>
+        in a google sheet, the results of which can be seen in the Data tab.
+    </p>
+
+    <p>
+        <b>The Blue Alliance DataSet:</b> <br>
+
+        The Blue Alliance is a database which holds the scoring information for FRC competitions from 1992 to to the present. <br>
+        Every year the ways to score points change and thus the score quantifiers in the Blue Alliance change from year to year. <br>
+        This website analyses the 2nd israel competition of 2019. <br> <br>
+
+        The score quantifiers for this competition are the following:
+        <ul>
+            <li>balls shot into holes (seperated into high, medium and low holes) -- Cargo</li>
+            <li>discs placed on holes (seperated into high, medium and low holes) -- Hatch Panel</li>
+            <li>the level from which the robot descended at the start of a match  -- Level</li>
+            <li>the level to which the robot climbed at the end of a match -- Climbing</li>
+            <li> a wheel that the robots must spin a certain distance and then so that<br> 
+                 it is in the right color orientation in order to gain points -- Wheel</li>
+        </ul>
+        
+        Every match in a competition has 2 main stages; teleop and autonomous. <br>
+        in the autonomous start of the match the robot is not controlled by a human but by autonomous code. <br>
+        In contrast, during the entirety of the teleop stage the robot is controlled by a human. <br> 
+        during the autonomous stage the robot scores more points for the same actions in the teleop stage
+    </p>
+
+    <p>
+        <b>Ranking Score</b> <br>
+        The Ranking Score is a measure of the ability of the robot; the higher the Ranking Score <br>
+        the better the robot. This information is very useful as it allows you to compare the performance <br>
+        of different robots and see what other score quantifiers are related to a high ranking score.
+    </p>
+</body>
+
+        {% endblock %}

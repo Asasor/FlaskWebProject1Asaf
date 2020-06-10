@@ -43,7 +43,7 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
     )
 
 @app.route('/contact')
@@ -52,7 +52,7 @@ def contact():
     return render_template(
         'contact.html',
         title='Contact',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='Frc Scouting Analyzer contact info (built by Asaf Soreq).'
     )
 
@@ -62,7 +62,7 @@ def photoalbum():
     return render_template(
         'photoalbum.html',
         title='Photo Album',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='Photos of various things in the FIRST FRC program'
     )
 
@@ -72,7 +72,7 @@ def about():
     return render_template(
         'about.html',
         title='About',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='About the frc scouting data analyzer.'
     )
 @app.route('/register', methods=['GET', 'POST'])
@@ -92,7 +92,7 @@ def Register():
         'register.html', 
         form=form, 
         title='Register New User',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         repository_name='Pandas',
         )
 @app.route('/login', methods=['GET', 'POST'])
@@ -124,8 +124,7 @@ def Query():
     highestRanking = max(df['Ranking Score'].tolist())
     subtitle = 'table is'
     plt.rcParams.update({'font.size': 75})
-    fig2 = plt.figure(figsize=(100,30))
-    ax1, ax2 = fig2.subplots(1,2)
+    fig, axs = plt.subplots(2, 2, figsize=(100,30)) # set up subplots to present graphs
     raw_data_table = df.to_html(classes = 'table table-hover')
 
     form = QueryFormStructure(request.form)
@@ -135,15 +134,28 @@ def Query():
         Ranking = name
         if (int(name) in df.index):
             Team_Number = df.loc[int(name),'Ranking Score']
-            
+            sortedByRankingScore = df.sort_values(by=['Ranking Score'])
+            sortedByRankingScore = sortedByRankingScore[['Ranking Score', 'Auto Points', 'Teleop Shooting + Wheel']]
             raw_data_table = ""
             subtitle = 'For comparison, The average ranking is - ' + str(avgRanking) + ' and the highest ranking score is - ' + str(highestRanking) + '.'
-            ax1.pie([df.loc[int(name),'Ranking Score'],highestRanking - df.loc[int(name),'Ranking Score']], labels = ["team ranking score \n blue", "the difference between \n the largest ranking \n score and the \n team's ranking score \n orange"])
-            ax2.bar(x =  list(df.columns)[1:-1], height = list(df.loc[int(name)])[1:-1])
+            axs[0,0].pie([df.loc[int(name),'Ranking Score'],highestRanking - df.loc[int(name),'Ranking Score']], labels = ["team ranking score \n blue", "the difference between \n the largest ranking \n score and the \n team's ranking score \n orange"])
+            
+            axs[0,1].bar(x =  list(df.columns)[1:-1], height = list(df.loc[int(name)])[1:-1])
+
+            axs[1,0].stackplot(sortedByRankingScore['Ranking Score'].tolist(), sortedByRankingScore['Auto Points'].tolist(), sortedByRankingScore['Teleop Shooting + Wheel'].tolist(), labels = ['Teleop','Autonomous'])
+            axs[1,0].legend(loc='upper left')
+            axs[1,0].set_xlabel('Ranking Score')
+            axs[1,0].set_ylabel('Point Score')
+
+            BetterRankingNum = len(sortedByRankingScore[sortedByRankingScore['Ranking Score'] > sortedByRankingScore.loc[int(name),'Ranking Score']]['Ranking Score'].tolist())
+            BetterAutonomousNum = len(sortedByRankingScore[sortedByRankingScore['Auto Points'] > sortedByRankingScore.loc[int(name),'Auto Points']]['Auto Points'].tolist())
+            BetterTeleopNum = len(sortedByRankingScore[sortedByRankingScore['Teleop Shooting + Wheel'] > sortedByRankingScore.loc[int(name),'Teleop Shooting + Wheel']]['Teleop Shooting + Wheel'].tolist())
+            axs[1,1].bar(x =  ['Ranking Score', 'Autonomous Points', 'Teleop Points'], height = [BetterRankingNum, BetterAutonomousNum, BetterTeleopNum], color='orange')
+            axs[1,1].set_ylabel('How many groups did better')
         else:
             Team_Number = name + ', no such team'
         form.name.data = ''
-    chart2 = plot_to_img(fig2)
+    chart = plot_to_img(fig)
 
 
     return render_template('Query.html', 
@@ -152,12 +164,12 @@ def Query():
             Ranking = Ranking,
             raw_data_table = raw_data_table,
             title='Query by the user',
-            year=datetime.now().year,
+            year=datetime.now().year, # set date
             message='This page will use the web forms to get user input',
             lower_heading=subtitle,
-            chart2 = chart2,
-            height2 = '500',
-            width2 = '1000'
+            chart = chart,
+            height2 = '500', # set graph height
+            width2 = '1000' # set graph width
         )   
 @app.route('/datamodel', methods=['GET', 'POST'])
 def datamodel():
@@ -166,7 +178,7 @@ def datamodel():
     return render_template(
         'datamodel.html',
         title='This is my Data Model page abou FRC scouting',
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='In this page some datasets that present data on the distribution of points in FIRST competitions are presented',
     )
 @app.route('/dataset1')
@@ -181,7 +193,7 @@ def DataSet1():
         'dataset1.html',
         title='This is the sheets data page',
         raw_data_table = raw_data_table,
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='In this page we will display the google sheets scouting points data by the given link'
     )
 @app.route('/dataset2')
@@ -196,6 +208,6 @@ def DataSet2():
         'dataset2.html',
         title='This is the blue alliance page',
         raw_data_table = raw_data_table,
-        year=datetime.now().year,
+        year=datetime.now().year, # set date
         message='In this page we will display the team overview sheet'
     )
